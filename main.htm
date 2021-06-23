@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kristi&display=swap" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"  ></script>
+    
+</head>
+<body>
+    <div class="container row col-8" id="container">
+
+            <div class="header"><h4>Student Enrollment Form </h4>
+
+            </div>
+            <div class="main ">
+                <div class="main-left  ">
+                    
+                    
+                    <table class="table table-hover table-responsive" id="table1" >
+                        
+                            <tr> <td><label for="name:">Name: </label></td> <td><input type="text" class="name" id="name" placeholder="Enter your full name" required></td></tr>
+                            <tr> <td><label for="Email:">Email:</label></td> <td><input type="email" class="email" id="email" placeholder="xyz@gmail.com" required></td></tr>
+                            <tr> <td> <label for="website">Website:</label></td> <td><input type="url" class="website-link"  id="website"placeholder="website link"></td></tr>
+                            <tr> <td><label for="file">Image link</label><br></td> <td><input type="file" onchange="loadFile(event)" accept="image/*"class="file" id="file" placeholder=" url of Image link"></td></tr>
+                            <tr> <td><label for="gender">Gender: </label></td>
+                            <td>
+                                <input type="radio" name="gender" class="gender" id="male" value="Male">Male
+                                <input type="radio" name="gender" class="gender" id="female" value="female">female
+                            </td></tr>
+                           
+                            <tr> <td> <label for="website" aria-readonly="false" aria-disabled="false">Skills:</label></td> 
+                            <td>
+                                <form id="checkform">
+                                    <input type="checkbox" name="skills" id="java" value="Java">Java
+                                    <input type="checkbox" name="skills" id ="css"value="CSS">CSS
+                                    <input type="checkbox" name="skills" id="html"value="HTML">HTML
+                                    
+                                    </form>
+
+                            </td></tr>
+                            
+                           <tr><td>
+                               <button onclick="send()" id="send">Submit
+                            
+                        </td><td>
+                               <button type="reset" onclick="reset()">Reset</button></td>
+                               
+                            </tr>
+                            
+                        
+                   
+                        <tr><td></td><td><img id="image" style="display: none;"></td></tr>
+                       </table>
+                </div>
+                <div class="main-right">
+                    <table class="table table-striped col-4 "id="tableId">
+                        <tr><th>Description</th><th>Image</th></tr>
+                    <tbody id="tbodyId">
+                        
+                        <!-- <p id="demo"></p> -->
+                        
+                    </tbody>
+                    
+
+                        
+                    </table>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="footer">Designed By Sujeet Date:19-06-2021 </div>
+
+
+
+
+
+
+    </div>
+    <script>
+        //for storing in local stroge data url to be fetched required in later for creating element at run time ;
+      document.querySelector('#file').addEventListener('change',function(){
+      const reader1=new FileReader();
+      
+      reader1.addEventListener("load"  ,()=>{
+        localStorage.setItem('image',reader1.result);
+
+      });
+		reader1.readAsDataURL(this.files[0]);
+
+       });
+
+//for instant displaying image of added file.
+
+        function loadFile(event) 
+        {
+        var reader = new FileReader();
+        reader.onload = function()
+        {
+           
+        var output = document.getElementById('image');
+        output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+        document.getElementById('image').style.display="block";
+        }
+       
+    </script>
+    <script src="js.js"></script>
+</body>
+</html>

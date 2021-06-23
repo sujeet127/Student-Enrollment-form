@@ -1,0 +1,116 @@
+*{
+    margin: 0px;
+    padding: auto;
+    font-family: lato;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    box-sizing: border-box;
+    left: 17%;
+    
+    top:10px
+    
+}
+.header{
+    background-color: green;
+    color: white;
+    height: 30px;
+    text-align: center;
+}
+.footer{
+    background-color: green;
+    color: white;
+    height: 20px;
+    text-align: center;
+    
+}
+
+
+
+.main{
+    
+    height: 500px;
+    border-radius: 249px;
+    background-color: #8bc599;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    flex-wrap: wrap;
+    width: 100%;
+    
+
+}
+
+.main-left{
+    background-color: rgb(222, 236, 225);
+    height: 500px;
+    width: 49.5%;
+    
+    
+}
+.main-right{
+    background-color: rgb(248, 248, 248);
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    overflow: scroll;
+    height: 500px;
+    float: right;
+    width: 50%;
+
+  
+}
+#image{
+    height: 150px;
+    width: 150px;
+    border: 2px solid green;
+    
+}
+.image1{
+    height: 150px;
+    width: 150px;
+    border: 2px solid green;
+    border-radius: 120px;
+
+}
+
+#tableId{
+    height: 50px;
+    
+    
+}
+@media  screen and (max-width: 780px) {
+    .main{
+        margin-bottom: 5px ;
+        width: 100%;
+        overflow: scroll;
+    }
+    .main-left{
+    
+    
+      
+        width: 102%;
+        
+        
+    }
+    .main-right{
+       
+       overflow: scroll;
+       width: 102%;
+
+    
+      
+    }
+    #table1{
+        border-left: rgb(108, 233, 202);
+        width: 100%;
+        
+    }
+    
+}
+
